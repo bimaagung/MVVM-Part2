@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="movied"
+            type="com.otetcode.mvvmpart2.ui.movies.MovieDetailViewModel" />
+    </data>
+
+<FrameLayout
+    android:id="@+id/movie_fragment_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.movies.MovieDetailFragment">
+
+    <RelativeLayout
+        android:padding="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{movied.title != null ? movied.title : `Loading`}"
+            android:layout_marginTop="50dp"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/release_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New"
+            android:layout_alignParentRight="true"
+            android:textColor="#fff"
+            android:padding="10dp"
+            android:background="#7CB342"
+            android:layout_marginTop="40dp"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <ImageView
+            android:id="@+id/cover_detail"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/title_detail"
+            android:layout_marginTop="20dp"
+            android:src="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/bahasa_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{movied.id != null ? movied.id : `Loading`}"
+            android:layout_below="@id/cover_detail"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/movie_text_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:layout_below="@id/bahasa_detail"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"/>
+
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>
+</layout>

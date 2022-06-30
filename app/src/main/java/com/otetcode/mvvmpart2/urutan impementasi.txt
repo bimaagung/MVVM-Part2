@@ -1,0 +1,12 @@
+
+*urutan
+
+1. movie api
+2. movie
+3. safe api request
+4. movie repository
+5. movie view model + movie fragment
+6. movie model factory
+7. corountines
+8. binding utils
+9. recyclerviewclicklistener

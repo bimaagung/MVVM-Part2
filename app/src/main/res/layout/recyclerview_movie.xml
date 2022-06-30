@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="movie"
+            type="com.otetcode.mvvmpart2.data.Movie" />
+    </data>
+
+
+<LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    app:image="@{movie.image}"
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@color/colorPrimary"/>
+
+                <TextView
+                    android:visibility="@{movie.is_new == 0 ? View.INVISIBLE : View.VISIBLE}"
+                    android:id="@+id/label_baru"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New"
+                    android:layout_marginTop="20dp"
+                    android:textColor="#fff"
+                    android:background="#7CB342"
+                    android:paddingRight="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="120dp"
+                    android:background="#E53935"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="8dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="8dp"
+                    android:text="@{movie.rating}"
+                    android:textSize="18sp"
+                    android:textColor="#fff"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{movie.title}"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/language"
+                    android:layout_below="@id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{movie.language}"
+                    android:textSize="14sp"
+                    android:layout_marginTop="3dp" />
+
+                <Button
+                    android:id="@+id/tb_book"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@color/colorPrimary"
+                    android:text="Book"
+                    android:textColor="#ffff"/>
+
+                <TextView
+                    android:id="@+id/dimensi"
+                    android:layout_below="@id/language"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{movie.type}"
+                    android:textSize="14sp"
+                    android:layout_marginTop="3dp" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+</layout>
